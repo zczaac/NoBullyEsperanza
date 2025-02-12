@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Bullying</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href=''>NoBullyEsperanza</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Education">Edukasi</a></li>
+                    <li><a href="#Forum">Forum Diskusi</a></li>
+                    <li><a href="#Consultation">Konsultasi</a></li>
+                    <li><a href="#Report">Laporan Bullying</a></li>
+                    <li><a href="#Testimonials">Testimoni</a></li>
+                    <li><a href="#Games">Game Edukatif</a></li>
+                    <li><a href="#Rules">Peraturan</a></li>
+                    <li><a href="#Resources">Sumber Bantuan</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <!-- Section: Home -->
+        <section id="home">
+            <img src="https://st.depositphotos.com/26922084/56502/v/450/depositphotos_565025076-stock-illustration-stop-bullying-concept-characters-stand.jpg" alt="Stop Bullying" />
+            <div class="kolom">
+                <p class="deskripsi">Lingkungan Positif #antibullying</p>
+                <h2>Ciptakan Lingkungan yang Damai</h2>
+            </div>
+        </section>
+
+        <!-- Section: About -->
+        <section id="About">
+            <div class="kolom">
+                <h2>Apa itu Bullying?</h2>
+                <p>Perundungan/Bullying adalah intimidasi atau kekerasan berulang yang melibatkan ketidakseimbangan kekuasaan.</p>
+                <p><a href="https://id.m.wikipedia.org/wiki/Perundungan" class="tbl-biru" target="_blank" rel="noopener noreferrer">Pelajari Lebih Lanjut</a></p>
+            </div>
+        </section>
+
+        <!-- Section: Edukasi -->
+        <section id="Education">
+            <h2>Edukasi tentang Bullying</h2>
+            <article>
+                <h3>Jenis-Jenis Bullying</h3>
+                <p>Penjelasan tentang berbagai jenis bullying (verbal, fisik, sosial, dan siber).</p>
+            </article>
+            <article>
+                <h3>Dampak Bullying</h3>
+                <p>Bullying dapat menyebabkan dampak fisik dan emosional jangka panjang.</p>
+            </article>
+            <article>
+                <h3>Cara Mencegah Bullying</h3>
+                <p>Langkah-langkah praktis untuk mencegah bullying di sekolah dan lingkungan.</p>
+            </article>
+            <div class="faq">
+                <h3>FAQ tentang Bullying</h3>
+                <ul>
+                    <li><strong>Apa yang harus dilakukan jika saya menyaksikan bullying?</strong> Laporkan kepada guru atau pihak berwenang.</li>
+                    <li><strong>Bagaimana saya bisa membantu korban bullying?</strong> Berikan dukungan dan dorong untuk berbicara dengan orang dewasa terpercaya.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section: Forum Diskusi -->
+        <section id="Forum">
+            <h2>Forum Diskusi</h2>
+            <p>Diskusi terbuka atau anonim untuk berbagi pengalaman dan saran tentang bullying.</p>
+        </section>
+
+        <!-- Section: Konsultasi -->
+        <section id="konsultasi">
+            <h2>Konsultasi dengan Guru BK</h2>
+            <form id="konsultasi-form">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required />
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required />
+        
+                <label for="pesan">Pesan:</label>
+                <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda" required></textarea>
+        
+                <button type="submit">Kirim Konsultasi</button>
+            </form>
+        </section>
+        
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+            (function() {
+                emailjs.init("qTEE50K1DoMadOJPN"); // Ganti dengan User ID EmailJS Anda
+            })();
+        
+            document.getElementById("konsultasi-form").addEventListener("submit", function(event) {
+                event.preventDefault(); // Mencegah reload halaman
+        
+                emailjs.sendForm("service_q32xioq", "template_ndj5dn8", this).then(
+                    function() {
+                        alert("Konsultasi berhasil terkirim!");
+                    },
+                    function(error) {
+                        alert("Terjadi kesalahan. Silakan coba lagi.");
+                    }
+                );
+            });
+        </script>
+        
+
+        <!-- Section: Laporan Bullying -->
+        <section id="Report">
+            <h2>Laporan Kasus Bullying</h2>
+            <form action="/submit_report" method="post">
+                <label for="description">Deskripsi Kasus:</label>
+                <textarea id="description" name="description" rows="4" placeholder="Deskripsikan kasus yang terjadi"></textarea>
+                <button type="submit">Laporkan Secara Anonim</button>
+            </form>
+        </section>
+
+        <!-- Section: Testimoni dan Kisah Inspiratif -->
+        <section id="Testimonials">
+            <h2>Testimoni dan Kisah Inspiratif</h2>
+            <p>Siswa dan alumni berbagi pengalaman mereka dalam menghadapi bullying.</p>
+        </section>
+
+        <!-- Section: Game Edukatif -->
+        <section id="Games">
+            <h2>Game dan Kuis Edukatif</h2>
+            <p>Mainkan kuis dan game yang dirancang untuk meningkatkan kesadaran tentang bullying.</p>
+        </section>
+
+        <!-- Section: Peraturan Sekolah -->
+        <section id="Rules">
+            <h2>Peraturan Sekolah tentang Anti-Bullying</h2>
+            <p>Tata tertib sekolah terkait bullying dan sanksi bagi pelaku serta perlindungan bagi korban.</p>
+        </section>
+
+        <!-- Section: Sumber Bantuan -->
+        <section id="Resources">
+            <h2>Sumber Bantuan dan Kontak Penting</h2>
+                <li>KPAI: <a href="https://www.kpai.go.id" target="_blank" rel="noopener noreferrer">Kunjungi Website</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <div id="contact">
+        <div class="wrapper">
+            <div class="footer">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>NoBullyEsperanza adalah platform digital yang didedikasikan untuk menciptakan lingkungan yang aman dan bebas dari perundungan.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>6GW7+77C, Jalan Raya Solo-YogyaKlaten, Tegalsanggrahan, Kec. Prambanan, Kabupaten Klaten, Jawa Tengah 57454</p>
+                    <p>Kode Pos: 57454</p>
+                    <p><a href="https://wa.me/+6281575376464" class="tbl-biru" target="_blank" rel="noopener noreferrer">BK</a></p>
+                    <p><a href="https://wa.me/+6285712561496" class="tbl-biru" target="_blank" rel="noopener noreferrer">Kesiswaan</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="copyright">
+        <div class="wrapper">
+            &copy; 2025. <b>ZWR</b> All Rights Reserved.
+        </div>
+    </div>
+    <script>
+        let prevScrollPos = window.pageYOffset;
+        const navbar = document.querySelector("nav");
+    
+        window.onscroll = function () {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollPos > currentScrollPos) {
+                navbar.style.top = "0";  // Tampilkan menu bar
+            } else {
+                navbar.style.top = "-80px";  // Sembunyikan menu bar
+            }
+            prevScrollPos = currentScrollPos;
+        };
+    </script>
+    
+</body>
+</html>
