@@ -249,4 +249,73 @@ form button:hover {
     p {
         font-size: 16px;
     }
+
+    #chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 300px;
+        height: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        background-color: #f7f7f7;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+    }
+    
+    #chat-header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    #chat-body {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #chat-input {
+        display: flex;
+        border-top: 1px solid #ccc;
+    }
+    
+    #input-box {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+    }
+    
+    #send-button {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    #send-button:hover {
+        background-color: #0056b3;
+    }
+    @media (max-width: 600px) {
+        #konsultasi {
+          padding: 15px;
+        }
+    
+        input,
+        textarea {
+          font-size: 14px;
+        }
+    
+        button {
+          font-size: 14px;
+        }
+      }    
 }
