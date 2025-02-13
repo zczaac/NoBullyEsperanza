@@ -10,17 +10,16 @@
     <nav>
         <div class="wrapper">
             <div class="logo"><a href=''>NoBullyEsperanza</a></div>
+            <img src=""
             <div class="menu">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#About">About</a></li>
                     <li><a href="#Education">Edukasi</a></li>
-                    <li><a href="#Forum">Forum Diskusi</a></li>
                     <li><a href="#Consultation">Konsultasi</a></li>
-                    <li><a href="#Report">Laporan Bullying</a></li>
                     <li><a href="#Testimonials">Testimoni</a></li>
                     <li><a href="#Rules">Peraturan</a></li>
-                    <li><a href="#Resources">Sumber Bantuan</a></li>
+                    <li><a href="#Resources">Bantuan</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -30,9 +29,9 @@
     <div class="wrapper">
         <!-- Section: Home -->
         <section id="home">
-            <img src="https://st.depositphotos.com/26922084/56502/v/450/depositphotos_565025076-stock-illustration-stop-bullying-concept-characters-stand.jpg" alt="Stop Bullying" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN3jKpint4swL6RgGTjNOas2Uu1MZJ_e_Fvw&s" alt="Stop Bullying" class="center"/>
             <div class="kolom">
-                <p class="deskripsi">Lingkungan Positif #antibullying</p>
+                <p class="center">Lingkungan Positif #antibullying</p>
                 <h2>Ciptakan Lingkungan yang Damai</h2>
             </div>
         </section>
@@ -140,12 +139,7 @@
             </div>
         </section>
 
-        <!-- Section: Forum Diskusi -->
-        <section id="Forum">
-            <h2>Forum Diskusi</h2>
-            <p>Diskusi terbuka atau anonim untuk berbagi pengalaman dan saran tentang bullying.</p>
-        </section>
-
+       
         <!-- Section: Konsultasi -->
         <section id="konsultasi">
             <h2>Konsultasi dengan Guru BK</h2>
@@ -183,16 +177,6 @@
             });
         </script>
         
-
-        <!-- Section: Laporan Bullying -->
-        <section id="Report">
-            <h2>Laporan Kasus Bullying</h2>
-            <form action="/submit_report" method="post">
-                <label for="description">Deskripsi Kasus:</label>
-                <textarea id="description" name="description" rows="4" placeholder="Deskripsikan kasus yang terjadi"></textarea>
-                <button type="submit">Laporkan Secara Anonim</button>
-            </form>
-        </section>
 
         <!-- Section: Testimoni dan Kisah Inspiratif -->
         <section id="Testimonials">
@@ -244,9 +228,9 @@
         window.onscroll = function () {
             let currentScrollPos = window.pageYOffset;
             if (prevScrollPos > currentScrollPos) {
-                navbar.style.top = "0";  // Tampilkan menu bar
+                navbar.style.top = "-75px";  // Tampilkan menu bar
             } else {
-                navbar.style.top = "-80px";  // Sembunyikan menu bar
+                navbar.style.top = "-200px";  // Sembunyikan menu bar
             }
             prevScrollPos = currentScrollPos;
         };

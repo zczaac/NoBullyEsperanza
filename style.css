@@ -18,12 +18,20 @@ body {
     max-width: 1100px;
     margin: auto;
     padding: 20px 0;
+    
+}
+
+.center {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
 }
 
 /* Navigation Styles */
 nav {
     background-color: #003399;
-    padding: 20px;
+    padding: 0.125px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -42,7 +50,10 @@ nav {
 
 .menu {
     display: flex;
-    gap: 30px;
+    justify-content: flex-end; /* Menggeser menu ke kanan */
+    list-style-type: none; /* Menghilangkan bullet list */
+    margin: 0;
+    padding: 0;
 }
 
 nav ul {
@@ -203,8 +214,9 @@ form button:hover {
 }
 
 .footer-section {
-    width: 30%;
-    margin: 10px 0;
+     margin: 0 auto;
+    width: 60%; /* Atur lebar sesuai kebutuhan */
+    text-align: center; /* Opsional, jika ingin teks di tengah */
 }
 
 #copyright {
@@ -317,5 +329,8 @@ form button:hover {
         button {
           font-size: 14px;
         }
-      }    
+      }
+       
+       
+    
 }
