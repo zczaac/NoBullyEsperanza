@@ -18,14 +18,14 @@ body {
     max-width: 1100px;
     margin: auto;
     padding: 20px 0;
-    
 }
 
 .center {
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Ensure image takes full width on mobile */
+    max-width: 400px; /* Limit the max width */
 }
 
 /* Navigation Styles */
@@ -50,8 +50,8 @@ nav {
 
 .menu {
     display: flex;
-    justify-content: flex-end; /* Menggeser menu ke kanan */
-    list-style-type: none; /* Menghilangkan bullet list */
+    justify-content: flex-end;
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
@@ -81,6 +81,12 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #0056b3;
     color: #ffffff;
+}
+
+.list-icon {
+    font-size: 32px;
+    display: none;
+    cursor: pointer;
 }
 
 /* Dropdown menu */
@@ -214,9 +220,9 @@ form button:hover {
 }
 
 .footer-section {
-     margin: 0 auto;
-    width: 60%; /* Atur lebar sesuai kebutuhan */
-    text-align: center; /* Opsional, jika ingin teks di tengah */
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
 }
 
 #copyright {
@@ -229,22 +235,55 @@ form button:hover {
     color: #333;
 }
 
-.list-icon {
-    font-size: 60px;
-    display: none;
-    
-    
-}
-
 /* Media Queries for Responsiveness */
-@media only and (max-width: 640px) {
-nav{
-    display: none;
+@media (max-width: 991px) {
+    .menu ul {
+        display: none; /* Hide the menu by default on smaller screens */
+        flex-direction: column;
+        background-color: #003399;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .menu.active ul {
+        display: flex;
+    }
+
+    .list-icon {
+        display: block;
+    }
+
+    .logo a {
+        font-size: 28px;
+    }
 }
 
+@media (max-width: 768px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
 }
 
+@media (max-width: 600px) {
+    form label {
+        font-size: 16px;
+    }
 
-
-
-       
+    form input, form textarea, form button {
+        font-size: 14px;
+    }
+}  
