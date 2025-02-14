@@ -40,7 +40,6 @@ nav {
     align-items: center;
     justify-content: space-between;
     transition: top 0.6s ease-in-out;
-    overflow-x: auto; /* Allow horizontal scrolling for the menu */
 }
 
 .logo a {
@@ -55,6 +54,7 @@ nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 nav ul {
@@ -90,6 +90,19 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Dropdown menu */
+nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    min-width: 180px;
+}
 
 nav ul li ul li {
     padding: 0;
@@ -233,10 +246,13 @@ form button:hover {
         top: 60px;
         right: 0;
         width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
     }
 
     .menu.active ul {
-        display: flex;
+        max-height: 500px; /* Allow enough height for the full menu */
     }
 
     .list-icon {
@@ -245,10 +261,6 @@ form button:hover {
 
     .logo a {
         font-size: 28px;
-    }
-
-    nav {
-        overflow-x: auto; /* Ensure the navigation bar scrolls horizontally */
     }
 }
 
@@ -279,4 +291,5 @@ form button:hover {
         font-size: 14px;
     }
 }  
+
 
