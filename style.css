@@ -239,7 +239,7 @@ form button:hover {
 /* Media Queries for Responsiveness */
 @media only screen and (max-width: 640px) {
 nav{
-    flex-wrap: wrap;
+    display: none;
 }
 
     nav ul {
@@ -249,7 +249,7 @@ nav{
     }
 
     .list-icon {
-        display: flex;
+        display: none;
         align-items: center;
 
     }
