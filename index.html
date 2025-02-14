@@ -25,7 +25,7 @@
                     <li><a href="#Resources">Bantuan</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                     
+                      
             </div>
         </div>
     </nav>
@@ -73,9 +73,9 @@
         <!-- Section: Konsultasi -->
         <section id="konsultasi">
             <h2>Konsultasi dengan Guru BK</h2>
-            <form id="konsultasi-form">
+            <form id="konsultasi-form" onsubmit="sendEmail(event)">
                 <label for="nama">Nama:</label>
-                <input type="text" id="nama" name="to_name" placeholder="Masukkan nama Anda" required />
+                <input type="text" id="nama" name="Admin" placeholder="Masukkan nama Anda" required />
         
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="from_name" placeholder="Masukkan email Anda" required />
@@ -85,6 +85,26 @@
         
                 <button type="submit">Kirim Konsultasi</button>
             </form>
+            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+            <script>
+                (function() {
+                    emailjs.init("qTEE50K1DoMadOJPN"); // Public Key Anda
+                })();
+
+                function sendEmail(event) {
+                    event.preventDefault(); // Mencegah halaman dari reload setelah submit
+
+                    // Ambil data dari form
+                    const form = document.getElementById("konsultasi-form");
+
+                    emailjs.sendForm('service_q32xioq', 'template_ndj5dn8', form)
+                        .then(function(response) {
+                            alert('Email berhasil dikirim!');
+                        }, function(error) {
+                            alert('Terjadi kesalahan. Silakan coba lagi.');
+                        });
+                }
+            </script>
         </section>
 
         <!-- Section: Testimoni -->
