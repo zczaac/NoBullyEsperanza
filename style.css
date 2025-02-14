@@ -238,7 +238,7 @@ form button:hover {
         align-items: center;
     }
 
-    .footer-section {
+    .list-icon{
         width: 100%;
     }
 }
@@ -246,12 +246,9 @@ form button:hover {
 
 
 .list-icon {
-    font-size: 100px;
-    display: flex;
+    font-size: 55px;
+    display: none;
     align-items: center;
     
 }
        
-.ph ph-list {
-    font-size: 24px;
-}
