@@ -261,10 +261,3 @@ form button:hover {
     }
 }  
 
-/* JavaScript untuk toggle menu */
-const listIcon = document.getElementById('list-icon');
-const menu = document.querySelector('.menu ul');
-
-listIcon.addEventListener('click', () => {
-    menu.classList.toggle('active');
-});
