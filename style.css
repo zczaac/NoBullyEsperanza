@@ -229,26 +229,33 @@ form button:hover {
     color: #333;
 }
 
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 640px) {
-    nav ul {
-        font-size: 24px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .list-icon{
-        width: 100%;
-    }
-}
-
-
-
 .list-icon {
-    font-size: 55px;
+    font-size: 60px;
     display: none;
-    align-items: center;
+    
     
 }
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 640px) {
+nav{
+    flex-wrap: wrap;
+}
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        
+    }
+
+    .list-icon {
+        display: flex;
+        align-items: center;
+
+    }
+}
+
+
+
+
        
