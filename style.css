@@ -90,19 +90,6 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/* Dropdown menu */
-nav ul li ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none;
-    padding: 10px 0;
-    border-radius: 5px;
-    min-width: 180px;
-}
 
 nav ul li ul li {
     padding: 0;
