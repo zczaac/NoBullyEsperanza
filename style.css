@@ -90,38 +90,6 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/* Dropdown menu */
-nav ul li ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none;
-    padding: 10px 0;
-    border-radius: 5px;
-    min-width: 180px;
-}
-
-nav ul li ul li {
-    padding: 0;
-}
-
-nav ul li ul li a {
-    color: #333;
-    padding: 10px 15px;
-    display: block;
-}
-
-nav ul li ul li a:hover {
-    background-color: #f1f1f1;
-}
-
-nav ul li:hover ul {
-    display: block;
-}
-
 /* Section Styles */
 section {
     margin: 50px 0;
@@ -246,13 +214,14 @@ form button:hover {
         top: 60px;
         right: 0;
         width: 100%;
-        max-height: 0;
         overflow: hidden;
+        max-height: 0;
         transition: max-height 0.3s ease;
     }
 
     .menu.active ul {
-        max-height: 500px; /* Allow enough height for the full menu */
+        display: flex;
+        max-height: 500px; /* Adjust this value as needed */
     }
 
     .list-icon {
@@ -292,4 +261,10 @@ form button:hover {
     }
 }  
 
+/* JavaScript untuk toggle menu */
+const listIcon = document.getElementById('list-icon');
+const menu = document.querySelector('.menu ul');
 
+listIcon.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
