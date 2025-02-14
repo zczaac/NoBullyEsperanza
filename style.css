@@ -237,22 +237,11 @@ form button:hover {
 }
 
 /* Media Queries for Responsiveness */
-@media only screen and (max-width: 640px) {
+@media only and (max-width: 640px) {
 nav{
-    display: flex;
+    display: none;
 }
 
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        
-    }
-
-    .list-icon {
-        display: flex;
-        align-items: center;
-
-    }
 }
 
 
