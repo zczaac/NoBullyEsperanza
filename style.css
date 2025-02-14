@@ -261,6 +261,28 @@ form button:hover {
     p {
         font-size: 16px;
     }
+}
+
+    @media screen and (max-width: 640px) {
+        .logo a {
+            font-size: 28px;
+        }
+    
+        nav ul li a {
+            font-size: 16px;
+        }
+    
+        h2 {
+            font-size: 30px;
+        }
+    
+        h3 {
+            font-size: 24px;
+        }
+    
+        p {
+            font-size: 16px;
+        }
 
     #chatbot-container {
         position: fixed;
