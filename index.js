@@ -12,20 +12,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-(function() {
-    emailjs.init("qTEE50K1DoMadOJPN"); // Public Key Anda
-})();
+(function () {
+    emailjs.init("qTEE50K1DoMadOJPN"); // Ganti dengan user ID EmailJS Anda
+  })();
 
-function sendEmail(event) {
-    event.preventDefault(); // Mencegah halaman dari reload setelah submit
+  function sendEmail(event) {
+    event.preventDefault(); // Mencegah form submit secara default
 
-    // Ambil data dari form
-    const form = document.getElementById("konsultasi-form");
+    const nama = document.getElementById("Admin").value;
+    const email = document.getElementById("from_name").value;
+    const pesan = document.getElementById("message").value;
 
-    emailjs.sendForm('service_q32xioq', 'template_ndj5dn8', form)
-        .then(function(response) {
-            alert('Email berhasil dikirim!');
-        }, function(error) {
-            alert('Terjadi kesalahan. Silakan coba lagi.');
-        });
-}
+    const templateParams = {
+      from_name: nama,
+      from_email: email,
+      message: pesan,
+    };
+
+    emailjs
+      .send("service_q32xioq", "template_ndj5dn8", templateParams)
+      .then(
+        function (response) {
+          alert("Laporan Anda berhasil dikirim!");
+          document.getElementById("consultation-form").reset();
+        },
+        function (error) {
+          alert("Terjadi kesalahan. Coba lagi nanti.");
+        }
+      );
+  }
