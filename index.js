@@ -19,18 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function sendEmail(event) {
     event.preventDefault(); // Mencegah form submit secara default
 
-    const nama = document.getElementById("Admin").value;
-    const email = document.getElementById("from_name").value;
-    const pesan = document.getElementById("message").value;
-
-    const templateParams = {
-      from_name: nama,
-      from_email: email,
-      message: pesan,
-    };
+    const form = document.getElementById("consultation-form");
 
     emailjs
-      .send("service_q32xioq", "template_ndj5dn8", templateParams)
+      .sendForm("service_q32xioq", "template_ndj5dn8", form)
       .then(
         function (response) {
           alert("Laporan Anda berhasil dikirim!");
