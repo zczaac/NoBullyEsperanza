@@ -31,27 +31,61 @@
         >
           <i class="ph ph-list"></i>
         </div>
+        
+        <!-- Mobile Sidebar Menu -->
+        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-blue-600 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+          <div class="flex justify-end p-4">
+            <button id="close-menu" class="text-white text-2xl">
+              <i class="ph ph-x"></i>
+            </button>
+          </div>
+          <ul class="flex flex-col space-y-4 p-4 text-white font-semibold">
+            <li><a href="#home" class="block py-2 hover:bg-blue-700 px-4 rounded">Beranda</a></li>
+            <li><a href="#about" class="block py-2 hover:bg-blue-700 px-4 rounded">Tentang Bullying</a></li>
+            <li><a href="#education" class="block py-2 hover:bg-blue-700 px-4 rounded">Edukasi</a></li>
+            <li><a href="#consultation" class="block py-2 hover:bg-blue-700 px-4 rounded">Konsultasi</a></li>
+            <li><a href="#testimonials" class="block py-2 hover:bg-blue-700 px-4 rounded">Testimoni</a></li>
+            <li><a href="#rules" class="block py-2 hover:bg-blue-700 px-4 rounded">Peraturan</a></li>
+            <li><a href="#resources" class="block py-2 hover:bg-blue-700 px-4 rounded">Bantuan</a></li>
+          </ul>
+        </div>
+
+        <!-- Desktop Menu -->
         <ul
           id="menu"
           class="hidden md:flex md:space-x-6 text-white font-semibold"
         >
           <li><a href="#home" class="hover:text-gray-300">Beranda</a></li>
-          <li>
-            <a href="#about" class="hover:text-gray-300">Tentang Bullying</a>
-          </li>
+          <li><a href="#about" class="hover:text-gray-300">Tentang Bullying</a></li>
           <li><a href="#education" class="hover:text-gray-300">Edukasi</a></li>
-          <li>
-            <a href="#consultation" class="hover:text-gray-300">Konsultasi</a>
-          </li>
-          <li>
-            <a href="#testimonials" class="hover:text-gray-300">Testimoni</a>
-          </li>
+          <li><a href="#consultation" class="hover:text-gray-300">Konsultasi</a></li>
+          <li><a href="#testimonials" class="hover:text-gray-300">Testimoni</a></li>
           <li><a href="#rules" class="hover:text-gray-300">Peraturan</a></li>
           <li><a href="#resources" class="hover:text-gray-300">Bantuan</a></li>
-          <li><a href="#contact" class="hover:text-gray-300"></a></li>
         </ul>
       </div>
     </nav>
+
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeMenu = document.getElementById('close-menu');
+
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('translate-x-full');
+      });
+
+      closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          mobileMenu.classList.add('translate-x-full');
+        }
+      });
+    </script>
 
     <!-- Hero Section -->
     <section
@@ -538,29 +572,14 @@
       </div>
     </section>
 
-    <script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
-    <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        window.AgentInitializer.init({
-          rootId: "JotformAgent-0195195f9e0f7f4fb5d2d6961d5e95c61d67",
-          formID: "0195195f9e0f7f4fb5d2d6961d5e95c61d67",
-          queryParams: ["skipWelcome=1", "maximizable=1"],
-          domain: "https:\/\/www.jotform.com",
-          isInitialOpen: false,
-          isDraggable: false,
-          background: "linear-gradient(180deg, #C8CEED 0%, #C8CEED 100%)",
-          buttonBackgroundColor: "#0a1551",
-          buttonIconColor: "#fff",
-          variant: false,
-          customizations: {
-            greeting: "Yes",
-            greetingMessage: "halo, apa yang bisa saya bantu?",
-            pulse: "Yes",
-            position: "right",
-          },
-        });
-      });
-    </script>
+    <div class="fixed bottom-4 left-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center space-x-2 hover:scale-105 transition-transform duration-300 z-50">
+      <i class="ph ph-users text-sm md:text-xl"></i>
+      <div class="flex items-center">
+        <span id="visitor-count" class="text-base md:text-xl font-bold mr-1">0</span>
+        <span class="text-xs md:text-sm">Pengunjung</span>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer
       id="contact"
@@ -609,27 +628,33 @@
           © 2025 NoBullyEsperanza. Semua Hak Dilindungi.
         </div>
       </div>
-      <div>
-        <div id="sfc285ergj5czjpxwgh1x4fcxe719922ywa"></div>
-        <script
-          type="text/javascript"
-          src="https://counter6.optistats.ovh/private/counter.js?c=285ergj5czjpxwgh1x4fcxe719922ywa&down=async"
-          async
-        ></script>
-        <noscript
-          ><a href="https://www.freecounterstat.com" title="hit counter"
-            ><img
-              src="https://counter6.optistats.ovh/private/freecounterstat.php?c=285ergj5czjpxwgh1x4fcxe719922ywa"
-              border="0"
-              title="hit counter"
-              alt="hit counter" /></a
-        ></noscript>
-      </div>
     </footer>
 
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        window.AgentInitializer.init({
+          rootId: "JotformAgent-0195195f9e0f7f4fb5d2d6961d5e95c61d67",
+          formID: "0195195f9e0f7f4fb5d2d6961d5e95c61d67",
+          queryParams: ["skipWelcome=1", "maximizable=1"],
+          domain: "https:\/\/www.jotform.com",
+          isInitialOpen: false,
+          isDraggable: false,
+          background: "linear-gradient(180deg, #C8CEED 0%, #C8CEED 100%)",
+          buttonBackgroundColor: "#0a1551",
+          buttonIconColor: "#fff",
+          variant: false,
+          customizations: {
+            greeting: "Yes",
+            greetingMessage: "halo, apa yang bisa saya bantu?",
+            pulse: "Yes",
+            position: "right",
+          },
+        });
+      });
+    </script>
     <!-- JavaScript -->
     <script>
-      const menuToggle = document.getElementById("menu-toggle");
       const menu = document.getElementById("menu");
 
       menuToggle.addEventListener("click", () => {
@@ -639,6 +664,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-database-compat.js"></script>
 
     <script type="module">
       // TODO: Add SDKs for Firebase products that you want to use
@@ -655,6 +681,23 @@
 
       firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
+      const database = firebase.database();
+
+      // Initialize visitor counter
+      function initializeVisitorCounter() {
+        const visitorCountRef = database.ref('visitorCount');
+        
+        // Increment visitor count when someone connects
+        visitorCountRef.transaction((currentCount) => {
+          return (currentCount || 0) + 1;
+        });
+
+        // Listen for visitor count changes
+        visitorCountRef.on('value', (snap) => {
+          const count = snap.val() || 0;
+          document.getElementById('visitor-count').textContent = count;
+        });
+      }
 
       // Function to load testimonials
       async function loadTestimonials() {
@@ -703,7 +746,6 @@
       async function loadAbout() {
         try {
           const doc = await db.collection("about").doc("main").get();
-          console.log(doc.data());
 
           if (doc.exists) {
             const data = doc.data();
@@ -732,6 +774,7 @@
         loadRules();
         loadAbout();
         loadVideo();
+        initializeVisitorCounter();
       });
     </script>
   </body>
