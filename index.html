@@ -653,14 +653,6 @@
         });
       });
     </script>
-    <!-- JavaScript -->
-    <script>
-      const menu = document.getElementById("menu");
-
-      menuToggle.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    </script>
 
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
@@ -677,6 +669,7 @@
         storageBucket: "nobullyesperanza.firebasestorage.app",
         messagingSenderId: "725447132227",
         appId: "1:725447132227:web:6d5e3149e0c21ab93fc0f6",
+        databaseURL: "https://nobullyesperanza-default-rtdb.asia-southeast1.firebasedatabase.app"
       };
 
       firebase.initializeApp(firebaseConfig);
