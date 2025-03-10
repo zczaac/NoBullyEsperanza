@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 (function () {
-    emailjs.init("qTEE50K1DoMadOJPN"); // Ganti dengan user ID EmailJS Anda
+    emailjs.init("ry2KYzDhaN5yXo2ya"); // Ganti dengan user ID EmailJS Anda
   })();
 
   function sendEmail(event) {
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("consultation-form");
 
     emailjs
-      .sendForm("service_q32xioq", "template_ndj5dn8", form)
+      .sendForm("service_66b73yd", "template_mhvr431", form)
       .then(
         function (response) {
           alert("Laporan Anda berhasil dikirim!");
