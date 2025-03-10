@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("consultation-form");
 
     emailjs
-      .sendForm("service_66b73yd", "template_mhvr431", form)
+      .sendForm("service_66b73yd", "template_ohshtrd", form)
       .then(
         function (response) {
           alert("Laporan Anda berhasil dikirim!");
