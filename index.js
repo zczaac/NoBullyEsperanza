@@ -12,24 +12,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-(function () {
-    emailjs.init("ry2KYzDhaN5yXo2ya"); // Ganti dengan user ID EmailJS Anda
-  })();
+document.addEventListener("DOMContentLoaded", function () {
+  // Pastikan EmailJS sudah dimuat sebelum diinisialisasi
+  emailjs.init("ry2KYzDhaN5yXo2ya"); // Ganti dengan User ID EmailJS Anda
 
-  function sendEmail(event) {
-    event.preventDefault(); // Mencegah form submit secara default
+  // Ambil elemen form
+  const form = document.getElementById("consultation-form");
 
-    const form = document.getElementById("consultation-form");
+  form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Mencegah form submit secara default
 
-    emailjs
-      .sendForm("service_66b73yd", "template_ohshtrd", form)
-      .then(
-        function (response) {
-          alert("Laporan Anda berhasil dikirim!");
-          document.getElementById("consultation-form").reset();
-        },
-        function (error) {
-          alert("Terjadi kesalahan. Coba lagi nanti.");
-        }
-      );
-  }
+      // Validasi input
+      const name = document.getElementById("to_name").value.trim();
+      const email = document.getElementById("from_name").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+          alert("Harap isi semua field sebelum mengirim.");
+          return;
+      }
+
+      // Kirim email melalui EmailJS
+      emailjs.sendForm("service_1y8ys9k", "template_ohshtrd", form)
+          .then(
+              function (response) {
+                  console.log("Email berhasil dikirim!", response);
+                  alert("Laporan Anda berhasil dikirim!");
+                  form.reset(); // Reset form setelah sukses
+              },
+              function (error) {
+                  console.error("Gagal mengirim email:", error);
+                  alert("Terjadi kesalahan. Silakan coba lagi.");
+              }
+          );
+  });
+});
+
